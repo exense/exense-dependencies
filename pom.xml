@@ -16,7 +16,7 @@
         <group>ch.exense.dependencies</group>
         <artifact>exense-dependencies</artifact>
 
-        <dep.mvn.dependency-check.version>9.2.0</dep.mvn.dependency-check.version>
+        <dep.mvn.dependency-check.version>10.0.3</dep.mvn.dependency-check.version>
         <dep.mvn.deploy.version>3.0.0-M1</dep.mvn.deploy.version>
         <dep.mvn.gpg.version>1.6</dep.mvn.gpg.version>
 
@@ -91,7 +91,8 @@
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
-            <!-- Profile use for checking security issues in external dependencies -->
+            <!-- Profile use for checking security issues in external dependencies. -->
+            <!-- This may take a LOOONG time (possibly multiple minutes), even when using an API key -->
             <!-- To quickly check the results, run this (in the project directory):
                  find . -name dependency-check-report.csv | xargs wc -l
              -->
@@ -105,11 +106,14 @@
                         <configuration>
                             <formats>HTML,CSV</formats>
                             <skipDependencyManagement>false</skipDependencyManagement>
-<!--                            <nvdApiKey>not-much-faster-anyway...</nvdApiKey>-->
-<!--                            <failOnError>false</failOnError>-->
+<!--                            <nvdApiKey>KEY_HERE</nvdApiKey>-->
+                            <failOnError>false</failOnError>
                         </configuration>
                         <executions>
                             <execution>
+                                <phase>
+                                    verify
+                                </phase>
                                 <goals>
                                     <goal>check</goal>
                                 </goals>
