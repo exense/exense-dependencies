@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) exense GmbH -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -8,6 +9,34 @@
     <artifactId>exense-dependencies</artifactId>
     <packaging>pom</packaging>
     <version>0.0.0-SNAPSHOT</version>
+
+    <!-- required metadata for maven central -->
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>${project.groupId}:${project.artifactId}</description>
+    <url>https://github.com/exense/</url>
+
+    <licenses>
+        <license>
+            <name>The GNU Affero General Public License 3.0</name>
+            <url>http://www.gnu.org/licenses/</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Exense GmbH</name>
+            <organization>Exense GmbH</organization>
+            <organizationUrl>https://exense.ch</organizationUrl>
+            <email>support@exense.ch</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/exense/</connection>
+        <developerConnection>scm:git:https://github.com/exense/</developerConnection>
+        <url>https://github.com/exense/</url>
+    </scm>
+    <!-- metadata end -->
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
