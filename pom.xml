@@ -12,13 +12,13 @@
 
     <!-- required metadata for maven central -->
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>${project.groupId}:${project.artifactId}</description>
-    <url>https://github.com/exense/</url>
+    <description>Exense Dependencies</description>
+    <url>https://github.com/exense/exense-dependencies</url>
 
     <licenses>
         <license>
-            <name>The GNU Affero General Public License 3.0</name>
-            <url>http://www.gnu.org/licenses/</url>
+            <name>The GNU Affero General Public License, Version 3</name>
+            <url>https://www.gnu.org/licenses/#AGPL</url>
         </license>
     </licenses>
 
@@ -32,9 +32,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/exense/</connection>
-        <developerConnection>scm:git:https://github.com/exense/</developerConnection>
-        <url>https://github.com/exense/</url>
+        <connection>scm:git:https://github.com/exense/exense-dependencies</connection>
+        <developerConnection>scm:git:https://github.com/exense/exense-dependencies</developerConnection>
+        <url>https://github.com/exense/exense-dependencies</url>
     </scm>
     <!-- metadata end -->
 
