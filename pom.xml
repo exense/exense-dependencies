@@ -32,8 +32,8 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/exense/exense-dependencies</connection>
-        <developerConnection>scm:git:https://github.com/exense/exense-dependencies</developerConnection>
+        <connection>scm:git:https://github.com/exense/exense-dependencies.git</connection>
+        <developerConnection>scm:git:https://github.com/exense/exense-dependencies.git</developerConnection>
         <url>https://github.com/exense/exense-dependencies</url>
     </scm>
     <!-- metadata end -->
