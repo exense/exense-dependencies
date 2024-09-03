@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) exense GmbH -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ch.exense.dependencies</groupId>
+    <artifactId>exense-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.0-SNAPSHOT</version>
+
+    <!-- required metadata for maven central -->
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Exense Dependencies</description>
+    <url>https://github.com/exense/exense-dependencies</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Exense GmbH</name>
+            <organization>Exense GmbH</organization>
+            <organizationUrl>https://exense.ch</organizationUrl>
+            <email>support@exense.ch</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/exense/exense-dependencies.git</connection>
+        <developerConnection>scm:git:https://github.com/exense/exense-dependencies.git</developerConnection>
+        <url>https://github.com/exense/exense-dependencies</url>
+    </scm>
+    <!-- metadata end -->
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <group>ch.exense.dependencies</group>
+        <artifact>exense-dependencies</artifact>
+
+        <dep.mvn.dependency-check.version>10.0.3</dep.mvn.dependency-check.version>
+        <dep.mvn.deploy.version>3.0.0-M1</dep.mvn.deploy.version>
+        <dep.mvn.gpg.version>1.6</dep.mvn.gpg.version>
+
+    </properties>
+
+    <modules>
+        <module>dependencies-apache-commons</module>
+        <module>dependencies-databases</module>
+        <module>dependencies-hk2</module>
+        <module>dependencies-jackson</module>
+        <module>dependencies-jakarta</module>
+        <module>dependencies-javassist</module>
+        <module>dependencies-jersey</module>
+        <module>dependencies-jetty</module>
+        <module>dependencies-junit</module>
+        <module>dependencies-guava</module>
+        <module>dependencies-logging</module>
+        <module>dependencies-mockito</module>
+        <module>dependencies-prometheus</module>
+        <module>dependencies-swagger</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${dep.mvn.deploy.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>DefaultBuild</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>SignedBuild</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>${dep.mvn.gpg.version}</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>DependencyCheck</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <!-- Profile use for checking security issues in external dependencies. -->
+            <!-- This may take a LOOONG time (possibly multiple minutes), even when using an API key -->
+            <!-- To quickly check the results, run this (in the project directory):
+                 find . -name dependency-check-report.csv | xargs wc -l
+             -->
+            <!-- Anything that returns more than 1 line (the CSV header line) is potentially vulnerable. -->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.owasp</groupId>
+                        <artifactId>dependency-check-maven</artifactId>
+                        <version>${dep.mvn.dependency-check.version}</version>
+                        <configuration>
+                            <formats>HTML,CSV</formats>
+                            <skipDependencyManagement>false</skipDependencyManagement>
+<!--                            <nvdApiKey>KEY_HERE</nvdApiKey>-->
+                            <failOnError>false</failOnError>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>
+                                    verify
+                                </phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
