@@ -15,7 +15,7 @@
     <artifactId>dependencies-prometheus</artifactId>
 
     <properties>
-        <prometheus-client.version>0.15.0</prometheus-client.version>
+        <prometheus-client.version>0.16.0</prometheus-client.version>
     </properties>
 
     <dependencyManagement>

@@ -19,7 +19,7 @@
             <dependency>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-bom</artifactId>
-                <version>11.0.21</version> <!-- newest: 12.x, but we'll do that another time -->
+                <version>12.0.14</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

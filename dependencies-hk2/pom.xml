@@ -15,7 +15,7 @@
     <artifactId>dependencies-hk2</artifactId>
 
     <properties>
-        <hk2.version>3.0.1</hk2.version>
+        <hk2.version>3.1.1</hk2.version>
     </properties>
     <dependencyManagement>
         <dependencies>

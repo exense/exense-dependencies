@@ -15,7 +15,7 @@
     <artifactId>dependencies-swagger</artifactId>
 
     <properties>
-        <swagger.version>2.2.22</swagger.version>
+        <swagger.version>2.2.25</swagger.version>
     </properties>
 
     <dependencyManagement>
