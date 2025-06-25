@@ -45,7 +45,7 @@
         <group>ch.exense.dependencies</group>
         <artifact>exense-dependencies</artifact>
 
-        <dep.mvn.dependency-check.version>10.0.3</dep.mvn.dependency-check.version>
+        <dep.mvn.dependency-check.version>12.1.1</dep.mvn.dependency-check.version>
         <dep.mvn.deploy.version>3.0.0-M1</dep.mvn.deploy.version>
         <dep.mvn.gpg.version>1.6</dep.mvn.gpg.version>
 
