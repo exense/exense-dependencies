@@ -53,6 +53,7 @@
 
     <modules>
         <module>dependencies-apache-commons</module>
+        <module>dependencies-asm</module>
         <module>dependencies-databases</module>
         <module>dependencies-hk2</module>
         <module>dependencies-jackson</module>
@@ -61,7 +62,7 @@
         <module>dependencies-jersey</module>
         <module>dependencies-jetty</module>
         <module>dependencies-junit</module>
-        <module>dependencies-guava</module>
+        <module>dependencies-google</module>
         <module>dependencies-logging</module>
         <module>dependencies-mockito</module>
         <module>dependencies-prometheus</module>
@@ -135,7 +136,7 @@
                         <configuration>
                             <formats>HTML,CSV</formats>
                             <skipDependencyManagement>false</skipDependencyManagement>
-<!--                            <nvdApiKey>KEY_HERE</nvdApiKey>-->
+                            <!--                            <nvdApiKey>KEY_HERE</nvdApiKey>-->
                             <failOnError>false</failOnError>
                         </configuration>
                         <executions>
