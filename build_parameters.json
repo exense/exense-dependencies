@@ -5,12 +5,12 @@
   "PARAMETERS": [
     {
       "NAME": "DEVELOPMENT",
-      "URL": "nexus-staging::https://nexus-enterprise-staging.exense.ch/repository/staging-maven/",
+      "URL": "nexus-staging::https://nexus-enterprise-staging.stepcloud-test.ch/repository/staging-maven/",
       "CONFIG": "DefaultBuild"
     },
     {
       "NAME": "PRODUCTION",
-      "URL": "sonatype::https://oss.sonatype.org/service/local/staging/deploy/maven2",
+      "URL": "sonatype::https://obsolete",
       "CONFIG": "SignedBuild"
     }
   ]

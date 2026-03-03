@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <name>${project.groupId}:${project.artifactId}</name>
     <packaging>pom</packaging>
     <parent>
         <groupId>ch.exense.dependencies</groupId>
@@ -19,7 +19,7 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
-                <version>5.16.0</version>
+                <version>5.21.0</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
