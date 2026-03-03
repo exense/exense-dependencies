@@ -37,6 +37,14 @@
                 <artifactId>jakarta.ws.rs-api</artifactId>
                 <version>3.1.0</version>
             </dependency>
+
+            <!-- Transitive dependency of jackson and others (e.g. swagger), potentially with different versions;
+            fix it to the highest version required (currently 2.4 by jackson) -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>2.4</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
