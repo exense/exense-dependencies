@@ -2,49 +2,49 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <name>${project.groupId}:${project.artifactId}</name>
-    <packaging>pom</packaging>
-    <parent>
-        <groupId>ch.exense.dependencies</groupId>
-        <artifactId>exense-dependencies</artifactId>
-        <version>0.0.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <name>${project.groupId}:${project.artifactId}</name>
+  <packaging>pom</packaging>
+  <parent>
+    <groupId>ch.exense.dependencies</groupId>
+    <artifactId>exense-dependencies</artifactId>
+    <version>0.0.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
 
-    <artifactId>dependencies-jackson</artifactId>
+  <artifactId>dependencies-jackson</artifactId>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.fasterxml.jackson</groupId>
-                <artifactId>jackson-bom</artifactId>
-                <version>2.20.1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>2.20.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
 
-            <!-- Newer version of jackson require parsson -->
-            <dependency>
-                <groupId>org.eclipse.parsson</groupId>
-                <artifactId>parsson</artifactId>
-                <version>1.1.6</version>
-            </dependency>
+      <!-- Newer version of jackson require parsson -->
+      <dependency>
+        <groupId>org.eclipse.parsson</groupId>
+        <artifactId>parsson</artifactId>
+        <version>1.1.6</version>
+      </dependency>
 
-            <!-- Jersey-compatible rs-api for Jackson -->
-            <dependency>
-                <groupId>jakarta.ws.rs</groupId>
-                <artifactId>jakarta.ws.rs-api</artifactId>
-                <version>3.1.0</version>
-            </dependency>
+      <!-- Jersey-compatible rs-api for Jackson -->
+      <dependency>
+        <groupId>jakarta.ws.rs</groupId>
+        <artifactId>jakarta.ws.rs-api</artifactId>
+        <version>3.1.0</version>
+      </dependency>
 
-            <!-- Transitive dependency of jackson and others (e.g. swagger), potentially with different versions;
-            fix it to the highest version required (currently 2.4 by jackson) -->
-            <dependency>
-                <groupId>org.yaml</groupId>
-                <artifactId>snakeyaml</artifactId>
-                <version>2.4</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+      <!-- Transitive dependency of jackson and others (e.g. swagger), potentially with different versions;
+      fix it to the highest version required (currently 2.4 by jackson) -->
+      <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>2.4</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 </project>
