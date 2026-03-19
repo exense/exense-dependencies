@@ -50,7 +50,7 @@
       <dependency>
         <groupId>io.jsonwebtoken</groupId>
         <artifactId>jjwt</artifactId>
-        <version>0.9.1</version> <!-- maybe update to 0.11.5 later, but that's split into -api, -impl, and -jackson -->
+        <version>0.9.1</version> <!-- maybe update to 0.12.x later, but this has breaking API changes -->
       </dependency>
 
 
