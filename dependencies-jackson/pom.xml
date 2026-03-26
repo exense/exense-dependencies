@@ -19,7 +19,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson</groupId>
         <artifactId>jackson-bom</artifactId>
-        <version>2.20.1</version>
+        <version>2.21.1</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -43,8 +43,17 @@
       <dependency>
         <groupId>org.yaml</groupId>
         <artifactId>snakeyaml</artifactId>
-        <version>2.4</version>
+        <version>2.5</version>
       </dependency>
+
+      <!-- related, as it depends on jackson -->
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt</artifactId>
+        <version>0.9.1</version> <!-- maybe update to 0.12.x later, but this has breaking API changes -->
+      </dependency>
+
+
     </dependencies>
   </dependencyManagement>
 </project>
