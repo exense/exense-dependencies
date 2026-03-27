@@ -14,13 +14,23 @@
 
   <artifactId>dependencies-jetty</artifactId>
 
+  <properties>
+    <jetty.version>12.1.7</jetty.version>
+  </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-bom</artifactId>
-        <version>11.0.26</version> <!-- Jetty 11 is EOL and won't receive security fixes anymore, we MUST migrate to 12 at some point. -->
+        <version>${jetty.version}</version>
         <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.jetty.ee10</groupId>
+        <artifactId>jetty-ee10-bom</artifactId>
+        <version>${jetty.version}</version> <type>pom</type>
         <scope>import</scope>
       </dependency>
     </dependencies>
