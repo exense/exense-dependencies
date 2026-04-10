@@ -14,6 +14,10 @@
 
   <artifactId>dependencies-jackson</artifactId>
 
+  <properties>
+    <jjwt.version>0.11.5</jjwt.version> <!-- There are newer versions, but apparently with significant API changes -->
+  </properties>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -49,10 +53,23 @@
       <!-- related, as it depends on jackson -->
       <dependency>
         <groupId>io.jsonwebtoken</groupId>
-        <artifactId>jjwt</artifactId>
-        <version>0.9.1</version> <!-- maybe update to 0.12.x later, but this has breaking API changes -->
+        <artifactId>jjwt-api</artifactId>
+        <version>${jjwt.version}</version>
       </dependency>
 
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>${jjwt.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>${jjwt.version}</version>
+        <scope>runtime</scope>
+      </dependency>
 
     </dependencies>
   </dependencyManagement>
