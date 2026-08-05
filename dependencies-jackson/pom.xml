@@ -23,7 +23,7 @@
       <dependency>
         <groupId>com.fasterxml.jackson</groupId>
         <artifactId>jackson-bom</artifactId>
-        <version>2.21.4</version>
+        <version>2.21.5</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -32,7 +32,7 @@
       <dependency>
         <groupId>org.eclipse.parsson</groupId>
         <artifactId>parsson</artifactId>
-        <version>1.1.6</version>
+        <version>1.1.9</version>
       </dependency>
 
       <!-- Jersey-compatible rs-api for Jackson -->

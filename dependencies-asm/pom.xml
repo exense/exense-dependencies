@@ -16,7 +16,7 @@
   <artifactId>dependencies-asm</artifactId>
 
   <properties>
-    <asm.version>9.9.1</asm.version>
+    <asm.version>9.10</asm.version>
   </properties>
 
   <dependencyManagement>
