@@ -35,12 +35,21 @@
         <version>${logback.version}</version>
       </dependency>
 
-      <!-- not directly used by exense-developed code itself, but by some transitive dependencies;
+      <!-- Not directly used by exense-developed code itself, but by some transitive dependencies;
       provide a common upper bound version -->
       <dependency>
         <groupId>commons-logging</groupId>
         <artifactId>commons-logging</artifactId>
         <version>1.3.5</version>
+      </dependency>
+
+      <!-- Similar: we don't use it, but some dependencies do, and we need a version without security issues. -->
+      <dependency>
+        <groupId>org.apache.logging.log4j</groupId>
+        <artifactId>log4j-bom</artifactId>
+        <version>2.25.5</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
